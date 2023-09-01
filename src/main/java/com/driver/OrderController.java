@@ -20,8 +20,8 @@ import org.springframework.web.bind.annotation.RestController;
 
 public class OrderController {
 
-//@Autowired
-OrderService os=new OrderService();
+@Autowired
+OrderService os;
     @PostMapping("/add-order")
     public ResponseEntity<String> addOrder(@RequestBody Order order){
          os.addOrder(order);

@@ -1,9 +1,12 @@
 package com.driver;
 
+import org.springframework.stereotype.Repository;
+
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
+@Repository
 
 public class OrderRepository {
     HashMap<String,Order> order=new HashMap<>();
@@ -88,7 +91,10 @@ public class OrderRepository {
     }
     public int countofordersnotassignedtopartner()
     {
+        if(order.size()>0 && orderpartner.size()>0)
         return order.size()-orderpartner.size();
+
+        return 0;
     }
     public int getOrdersLeftAfterGivenTimeByPartnerid(String t,String dpid)
     {
