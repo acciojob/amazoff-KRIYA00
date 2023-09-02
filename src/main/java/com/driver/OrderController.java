@@ -23,10 +23,12 @@ public class OrderController {
 @Autowired
 OrderService os;
     @PostMapping("/add-order")
-    public ResponseEntity<String> addOrder(@RequestBody Order order){
+    public ResponseEntity<String>addOrder(@RequestBody Order order){
          os.addOrder(order);
         return new ResponseEntity<>("New order added successfully", HttpStatus.CREATED);
     }
+
+
 
     @PostMapping("/add-partner/{partnerId}")
     public ResponseEntity<String> addPartner(@PathVariable String partnerId){

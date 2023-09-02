@@ -13,6 +13,14 @@ public class Order {
          this.deliveryTime=Integer.valueOf(deliveryTime.substring(0,2))*60 + Integer.valueOf(deliveryTime.substring(3,5));
     }
 
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    public void setDeliveryTime(int deliveryTime) {
+        this.deliveryTime = deliveryTime;
+    }
+
     public String getId() {
         return id;
     }
