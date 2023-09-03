@@ -156,17 +156,13 @@ public class OrderRepository {
 
             if(partnerOrderdB.containsKey((dpid)))
             {
-                List<String>orderlist=partnerOrderdB.get(dpid);
-                for(int i=0;i<orderlist.size();i++)
-                {
-                    if(orderlist.get(i).equals(orid))
-                        orderlist.remove(i);
-                }
+              partnerOrderdB.get(dpid).remove(orid);
             }
             deliverydB.get(dpid).setNumberOfOrders(deliverydB.get(dpid).getNumberOfOrders()-1);
             orderpartnerdB.remove(orid);
-            orderdB.remove(orid);
+
         }
+        orderdB.remove(orid);
     }
 
 }
