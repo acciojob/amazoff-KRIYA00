@@ -130,7 +130,7 @@ public class OrderRepository {
     public void deletePartnerByid(String dpid)
     {
 
-         for(String or:orderpartnerdB.keySet())
+      /*   for(String or:orderpartnerdB.keySet())
          {
              String dp=orderpartnerdB.get(or);
              if(dp.equals(dpid)) {
@@ -145,6 +145,13 @@ public class OrderRepository {
         }
         if(deliverydB.containsKey(dpid))
             deliverydB.remove(dpid);
+            */
+        List<String> ordersOfPartner = partnerOrderdB.get(dpid);
+        for(String orderId: ordersOfPartner){
+            orderpartnerdB.remove(orderId);
+        }
+        partnerOrderdB.remove(dpid);
+       deliverydB.remove(dpid);
     }
     public void deleteOrderById(String orid)
     {
