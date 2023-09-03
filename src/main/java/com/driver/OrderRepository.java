@@ -81,10 +81,10 @@ public class OrderRepository {
     }
     public int countofordersnotassignedtopartner()
     {
-        if(orderdB.size()>0 && orderpartnerdB.size()>0)
+        //if(orderdB.size()>0 && orderpartnerdB.size()>0)
         return orderdB.size()-orderpartnerdB.size();
-
-        return 0;
+         //  else
+      //  return 0;
     }
     public int getOrdersLeftAfterGivenTimeByPartnerid(String t,String dpid)
     {
