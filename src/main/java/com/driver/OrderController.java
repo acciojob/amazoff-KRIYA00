@@ -90,6 +90,14 @@ OrderService os=new OrderService();
         orders=os.getallOrders();
         return new ResponseEntity<>(orders, HttpStatus.CREATED);
     }
+    @GetMapping("/get-count-of-assigned-orders")
+    public ResponseEntity<Integer> getCountOfassignedOrders(){
+        Integer countOfOrders = 0;
+
+        //Count of orders that have not been assigned to any DeliveryPartner
+        countOfOrders= os.getCountOfassignedorders();
+        return new ResponseEntity<>(countOfOrders, HttpStatus.CREATED);
+    }
 
     @GetMapping("/get-count-of-unassigned-orders")
     public ResponseEntity<Integer> getCountOfUnassignedOrders(){

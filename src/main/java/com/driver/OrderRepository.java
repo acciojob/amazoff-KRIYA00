@@ -86,6 +86,10 @@ public class OrderRepository {
          //  else
       //  return 0;
     }
+    public int countofordersassignedtopartner()
+    {
+        return orderpartnerdB.size();
+    }
     public int getOrdersLeftAfterGivenTimeByPartnerid(String t,String dpid)
     {
         int count=0;
@@ -125,12 +129,7 @@ public class OrderRepository {
     }
     public void deletePartnerByid(String dpid)
     {
-         if(partnerOrderdB.containsKey(dpid))
-         {
-             partnerOrderdB.remove(dpid);
-         }
-         if(deliverydB.containsKey(dpid))
-             deliverydB.remove(dpid);
+
          for(String or:orderpartnerdB.keySet())
          {
              String dp=orderpartnerdB.get(or);
@@ -140,6 +139,12 @@ public class OrderRepository {
 
              }
          }
+        if(partnerOrderdB.containsKey(dpid))
+        {
+            partnerOrderdB.remove(dpid);
+        }
+        if(deliverydB.containsKey(dpid))
+            deliverydB.remove(dpid);
     }
     public void deleteOrderById(String orid)
     {

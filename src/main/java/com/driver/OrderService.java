@@ -45,6 +45,10 @@ public class OrderService {
     {
        return or.countofordersnotassignedtopartner();
     }
+    public int getCountOfassignedorders()
+    {
+        return or.countofordersassignedtopartner();
+    }
     public int getOrdersLeftAfterGivenTimeBypartnerId(String time,String partnerid)
     {
         return or.getOrdersLeftAfterGivenTimeByPartnerid(time,partnerid);
