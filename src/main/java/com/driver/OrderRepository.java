@@ -138,20 +138,20 @@ public class OrderRepository {
 
              }
          }
-        if(partnerOrderdB.containsKey(dpid))
+     /*   if(partnerOrderdB.containsKey(dpid))
         {
             partnerOrderdB.remove(dpid);
         }
         if(deliverydB.containsKey(dpid))
             deliverydB.remove(dpid);
-
-       /* List<String> ordersOfPartner = partnerOrderdB.get(dpid);
+*/
+        List<String> ordersOfPartner = partnerOrderdB.get(dpid);
         for(String orderId: ordersOfPartner){
             orderpartnerdB.remove(orderId);
         }
         partnerOrderdB.remove(dpid);
        deliverydB.remove(dpid);
-       */
+
 
     }
     public void deleteOrderById(String orid)
